@@ -1,7 +1,7 @@
 import os
 
 from astar import AStar
-from utils import draw_grid, get_path, resource_root
+from utils import render_board, get_path, resource_root
 from random import randint
 
 
@@ -87,7 +87,7 @@ def run():
         path = get_path(come_from, board.enemy, board.player)
         board.move_entity("enemy", path[1][0], path[1][1])
         path = path[2:-1]
-        draw_grid(board, start=board.enemy, end=board.player, width=2, path=path)
+        render_board(board, start=board.enemy, end=board.player, width=2, path=path)
         if board.enemy == board.player:
             print("You lost!")
             break

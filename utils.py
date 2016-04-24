@@ -25,17 +25,16 @@ class PriorityQueue:
         return heapq.heappop(self.elements)[1]
 
 
-def draw_tile(graph, tile, start, end, path=list(), width=3):
-    r = ""
+def render_tile(graph, tile, start, end, path=list(), width=3):
     if tile == end:
-        r = "P"
-    if tile == start:
-        r = "E"
-    if tile in path:
-        r = "@"
-    if tile in graph.walls:
-        r = "#" * width
-    return r
+        return "P"
+    elif tile == start:
+        return "E"
+    elif tile in path:
+        return "@"
+    elif tile in graph.walls:
+        return "#" * width
+    return ""
 
 
 def get_path(came_from, start, goal):
@@ -48,10 +47,10 @@ def get_path(came_from, start, goal):
     return path
 
 
-def draw_grid(graph, start, end, width=2, path=list()):
+def render_board(graph, start, end, width=2, path=list()):
     for y in range(graph.height):
         for x in range(graph.width):
-            print("%%-%ds" % width % draw_tile(graph, (x, y), start, end, path, width), end="")
+            print("%%-%ds" % width % render_tile(graph, (x, y), start, end, path, width), end="")
         print()
 
 
