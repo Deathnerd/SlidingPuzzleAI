@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from PySide import QtGui, QtCore
 from utils import *
 import os
@@ -305,3 +307,24 @@ class PuzzlePiece(QtGui.QLabel):
 
 
 # TODO: Add AI to solve
+class AI:
+    timer = QtCore.QBasicTimer
+
+    def __init__(self, board):
+        self.board = board
+        PuzzleBoard.BeingSolved = True
+
+    def solve(self):
+        pass
+
+    def feasability_check(self, move):
+        pieces = deepcopy(self.board.pieces)
+        if move == "up":
+            pass
+        elif move == "down":
+            pass
+        elif move == "left":
+            pass
+        elif move == "right":
+            pass
+        return score

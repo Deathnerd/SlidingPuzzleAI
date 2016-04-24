@@ -1,9 +1,3 @@
-from sliding_puzzle import GUI
-import sys
-from PySide import QtGui
-from utils import *
+import a_star_chase
 
-if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
-    gui = GUI(grid_size=DIFFICULTY_HARD)
-    sys.exit(app.exec_())
+a_star_chase.run()
