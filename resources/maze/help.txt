@@ -1,3 +1,13 @@
+==========
+| LEGEND |
+==========
+P -> That's you!
+E -> That's the evil guy!
+# -> That's a wall!
+. -> That's light grass!
+, -> That's medium grass!
+; -> That's a sign someone should fire the gardener (it's very thick grass!)
+
 You're the P character. The Evil, clever E is trying to catch you!
 
 You must get to the bottom-right of the stage!
@@ -14,3 +24,4 @@ You may also skip your turn by pressing the enter key.
 To escape from this nightmare early, enter one of the following commands: (quit, q, exit, e).
 
 There is no guarantee of escape. Are you feeling lucky?
+

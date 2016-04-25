@@ -11,6 +11,9 @@ Infinity = float('inf')
 
 
 class PriorityQueue:
+    """
+    A simple Priority Queue using Python's built-in Heap-queues
+    """
     def __init__(self):
         self.elements = []
 
@@ -25,34 +28,12 @@ class PriorityQueue:
         return heapq.heappop(self.elements)[1]
 
 
-def render_tile(graph, tile, start, end, path=list(), width=3):
-    if tile == end:
-        return "P"
-    elif tile == start:
-        return "E"
-    elif tile in path:
-        return "@"
-    elif tile in graph.walls:
-        return "#" * width
-    return ""
-
-
-def get_path(came_from, start, goal):
-    current = goal
-    path = [current]
-    while current != start:
-        current = came_from[current]
-        path.append(current)
-    path.reverse()
-    return path
-
-
-def render_board(graph, start, end, width=2, path=list()):
-    for y in range(graph.height):
-        for x in range(graph.width):
-            print("%%-%ds" % width % render_tile(graph, (x, y), start, end, path, width), end="")
-        print()
-
-
 def range_check(val, max=2, min=0):
+    """
+    No, Oracle. This doesn't infringe on your API.
+    :param val:
+    :param max:
+    :param min:
+    :return:
+    """
     return min <= val < max
